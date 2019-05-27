@@ -54,12 +54,12 @@ BINARY-SUM(A, B, C)
 1  carry_over = 0
 2  for i = n+1 downto 2
 3      j = i-1
-4      if carry_over+A\[j\]+B\[j\] = 3
-5          C\[i\] = 1
-6      elseif carry_over+A\[j\]+B\[j\] = 2
-7          C\[i\] = 0
+4      if carry_over+A[j]+B[j] = 3
+5          C[i] = 1
+6      elseif carry_over+A[j]+B[j] = 2
+7          C[i] = 0
 8      else
-9          C\[i\] = carry_over+A\[j\]+B\[j\]
+9          C[i] = carry_over+A[j]+B[j]
 10         carry_over = 1
 11 if carry_over = 1
 12     C[1] = 1
