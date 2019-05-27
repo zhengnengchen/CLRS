@@ -37,7 +37,7 @@ LINEAR-SEARCH(A, v)
 
 **Loop Invariant**: At the start of each iteration of the for loop of lines 1-3, either the element A\[i\] equals to the value v or not.
 
-**Iniitialization**: When i is assigned with 1, the program compare A\[i\] with value v. It is true for A\[i\] that it is either equals to v or not.
+**Initialization**: When i is assigned with 1, the program compare A\[i\] with value v. It is true for A\[i\] that it is either equals to v or not.
 
 **Maintenance**: After the if statement in line 2 comparing A\[i-1\] with v, program execute the next iteration of for loop of lines 1-3. That is, comparing A\[i\] with v. The same condition holds for A\[i\].
 
