@@ -39,9 +39,9 @@ LINEAR-SEARCH(A, v)
 
 **Initialization**: When i is assigned with 1, the program compare A\[i\] with value v. It is true for A\[i\] that it is either equals to v or not.
 
-**Maintenance**: After the if statement in line 2 comparing A\[i-1\] with v, program execute the next iteration of for loop of lines 1-3. That is, comparing A\[i\] with v. The same condition holds for A\[i\].
+**Maintenance**: After the `if` statement in line 2 comparing A\[i-1\] with v, the program execute the next iteration of `for` loop of lines 1-3. That is, comparing A\[i\] with v. The same condition holds for A\[i\].
 
-**Termination**: The function is terminated by either the `return` expression in line 3 when the condition of if statement in line 2 is met that A\[i\] equals to v or the `return` expression in line 4 since no element in array A equals to v. As a result, either an index of array A which represent the location in A where element equals to v or a special value NIL is returned. 
+**Termination**: The function is terminated by either the `return` expression in line 3 when the condition of the `if` statement in line 2 is met that A\[i\] equals to v or the `return` expression in line 4 since no element in array A equals to v. As a result, either an index of array A which represent the location in A where element of A equals to v or a special value NIL representing that there is no such value v exists in array A is returned. 
 
 # 2.1-4
 **Adding two n-bit binary interger**:
