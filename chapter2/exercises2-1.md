@@ -1,4 +1,6 @@
 # 2.1-1
+> Using Figure 2.2 as a model, illustrate the operation of INSERTION-SORT on the array A = <31, 41, 59, 26, 41, 58>
+
 <pre>
 1. 31, 41, 59, 26, 41, 58
        ^
@@ -14,6 +16,8 @@
 </pre>
 
 # 2.1-2
+> Rewrite the INSERTION-SORT procedure to sort into nonincreasing instead of nondecreasing order.
+
 ```
 INSERTION-SORT(A)
 1 for j = 2 to A.length
@@ -27,6 +31,9 @@ INSERTION-SORT(A)
 ``` 
 
 # 2.1-3
+> Consider the searching problem:
+>
+> **Input**: A sequence of n numbers 
 ```
 LINEAR-SEARCH(A, v)
 1 for i = 1 to A.length
