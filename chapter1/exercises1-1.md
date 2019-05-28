@@ -25,4 +25,6 @@ cons: Deleting a item in the middle of vector is inefficient.
 The shortest-path and traveling-salesman problems are similar because both problems' solutions are finding a path in a graph with lowest weight cost. Two problems are different because the shortest-path problem starts with a specific node and ends with another node and finds a path with lowest cost among all paths from starting node to ending node while the traveling-salesman problem finds a path passing through a set of points with lowest costs.
 
 # 1.1-5
+> Come up woth a real-world problem in which only the best solution will do. Then come up with one in which a solution that is "approximately" the best is good enough.
+
 There exists a optimal solution for hortest-path problem. And traveling-salesman problem does not have an efficient algorithm so that only a approximate solution can be brought up.
