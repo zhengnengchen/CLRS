@@ -33,7 +33,12 @@ INSERTION-SORT(A)
 # 2.1-3
 > Consider the searching problem:
 >
-> **Input**: A sequence of n numbers 
+> **Input**: A sequence of n numbers ![equation](https://latex.codecogs.com/svg.latex?A%3D%3Ca_1%2C%20a_2%2C%5Cdots%2Ca_n%3E) and a value v
+>
+> **Output**: An index i such that v = A\[i\] or the special value NIL if v does not appear in A.
+>
+> Write pseudocode for **linear search**, which scans through the sequence, looking for v. Using a loop invariant, prove that your algorithm is correct. Make sure that your loop invariant fulfills the three necessary properties.
+
 ```
 LINEAR-SEARCH(A, v)
 1 for i = 1 to A.length
