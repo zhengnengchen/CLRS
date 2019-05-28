@@ -1,4 +1,6 @@
 # 1-1
+> For each function ![equation](https://latex.codecogs.com/svg.latex?f%28n%29) and time t in the following table, determine the largest size n of a problem that can be solved in time t, assuming that the algorithm to solve the problem takes ![equation](https://latex.codecogs.com/svg.latex?f%28n%29) microseconds.
+
 | function | 1 second |
 |  :---:   |   :---:  |
 | ![equation](https://latex.codecogs.com/svg.latex?%5Clg%7Bn%7D) | ![equation](https://latex.codecogs.com/svg.latex?2%5E%7B1000000%7D) |
