@@ -31,7 +31,7 @@ Since the loop invariant holds when the `for` loop terminates, we can tell that 
 **Worst-case running time**: ![equation](https://latex.codecogs.com/svg.latex?%5Ctheta%28n%5E2%29)
 
 # 2.2-3
-Consider linear search again (see Exercises 2.1-3). How many elements of the input sequence need to be checked on the average, assuming that the element being searched for is equally likely to be any element in the array? How about in the worst case? What are the average-case and worst-case running times of linear search in ![equation](https://latex.codecogs.com/svg.latex?%5Ctheta)-notation? Justify your answer.
+> Consider linear search again (see Exercises 2.1-3). How many elements of the input sequence need to be checked on the average, assuming that the element being searched for is equally likely to be any element in the array? How about in the worst case? What are the average-case and worst-case running times of linear search in ![equation](https://latex.codecogs.com/svg.latex?%5Ctheta)-notation? Justify your answer.
 
 On the average, half elements of the input sequence need to be checked.  
 On the worst-case, the whole input sequence needs to be checked.
@@ -41,4 +41,6 @@ On the worst-case, the whole input sequence needs to be checked.
 **Worst-case running time**: ![equation](https://latex.codecogs.com/svg.latex?%5Ctheta%28n%29)
 
 # 2.2-4
+> How can we modify almost any algorithm to have a good best-case running time?
+
 If only consider the best-case running time, a possible way might be add a hard coded part to check the state of input that if input itself are in the state of output. For example, in sorting problems, if the desired output is non-decreasing array and the input is already sorted that way, we can reduce the best-case running time from O(n) to O(1) using hard coded checking part.
