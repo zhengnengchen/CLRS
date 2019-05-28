@@ -56,6 +56,8 @@ LINEAR-SEARCH(A, v)
 **Termination**: The function is terminated by either the `return` expression in line 3 when the condition of the `if` statement in line 2 is met that A\[i\] equals to v or the `return` expression in line 4 since no element in array A equals to v. As a result, either an index of array A representing the location in A where element of A equals to v or a special value NIL representing that there is no such value v exists in array A is returned.
 
 # 2.1-4
+> Consider the problem of adding two n-bit binary integers, stored in two n-element arrays A and B. The sum of the two integers should be stored in binary form in an (n+1)-element array C. State the problems formally and write pseudocode for adding the two integers.
+
 **Adding two n-bit binary interger**:
 
 **Input**: Two n-element arrays A and B representing two n-bit binary integers  
