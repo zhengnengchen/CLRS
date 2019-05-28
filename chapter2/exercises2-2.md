@@ -1,7 +1,11 @@
 # 2.2-1
+> Express the function ![equation](https://latex.codecogs.com/svg.latex?%5Cdfrac%7Bn%5E3%7D%7B1000%7D-100n%5E2-100n&plus;3) in terms of ![equation](https://latex.codecogs.com/svg.latex?%5Ctheta)-notation.
+
 ![equation](https://latex.codecogs.com/svg.latex?%5Ctheta%28n%5E3%29)
 
 # 2.2-2
+> Consider sorting n numbers stored in array A by first finding the smallest element of A and exchanging it with the element in A\[1\]. Then find the second smallest element of A, and exchange it with A\[2\]. Continue in this manner for the first n-1 elements of A. Write pseudocode for this algorithm, which is known as **selection sort**. What loop invariant does this algorithm maintain? Why does it need to run for only the first n-1 elements, rather than for all n elements? Give the best-case and worst-case running times of selection sort in ![equation](https://latex.codecogs.com/svg.latex?%5Ctheta)-notation.
+
 ```
 SELECTION-SORT(A)
 1  for i = 1 to n-1
@@ -27,6 +31,8 @@ Since the loop invariant holds when the `for` loop terminates, we can tell that 
 **Worst-case running time**: ![equation](https://latex.codecogs.com/svg.latex?%5Ctheta%28n%5E2%29)
 
 # 2.2-3
+Consider linear search again (see Exercises 2.1-3). How many elements of the input sequence need to be checked on the average, assuming that the element being searched for is equally likely to be any element in the array? How about in the worst case? What are the average-case and worst-case running times of linear search in ![equation](https://latex.codecogs.com/svg.latex?%5Ctheta)-notation? Justify your answer.
+
 On the average, half elements of the input sequence need to be checked.  
 On the worst-case, the whole input sequence needs to be checked.
 
