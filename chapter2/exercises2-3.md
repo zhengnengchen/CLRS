@@ -102,5 +102,8 @@ No. We can find the proper index for A\[j\] to insert in ![equation](https://lat
 # 2.3-7
 > Describe a ![equation](https://latex.codecogs.com/svg.latex?%5Ctheta%28n%5Clg%7Bn%7D%29)-time algorithm that, given a set S of n integers and another integer x, determines whether or not there exist two elements in S whose sum is exactly x.
 
-By combining **merge sort** and **binary search** procedures to implement a new **two sum** procedure, we have the desired algorithm which has the worst-case running time in ![equation](https://latex.codecogs.com/svg.latex?%5Ctheta%28n%5Clg%7Bn%7D%29):  
+By combining **merge sort** and **binary search** procedures to implement a new **two sum** procedure, we have the desired algorithm which has the worst-case running time in ![equation](https://latex.codecogs.com/svg.latex?%5Ctheta%28n%5Clg%7Bn%7D%29).
+
 First, sorting set S using **merge sort** procedure. Then for each integer i in set S, finding the value of x-i in the remaining set using **binary search** procedure since we have already sorted the set S. If a value of x-i exists for an integer i in set S, there exist two elements in S whose sum is exactly x. Otherwise, such two elements do not exist in set S.
+
+Sorting set S takes ![equation](https://latex.codecogs.com/svg.latex?%5Ctheta%28n%5Clg%7Bn%7D%29) time. Then we perform n times of **binary search** on a subarray whose size is n-1. This takes ![equation](https://latex.codecogs.com/svg.latex?n%5Ccdot%5Ctheta%28%5Clg%7Bn%7D%29%3D%5Ctheta%28n%5Clg%7Bn%7D%29) time. Overall, our algorithm of **two sum** procedure is in ![equation](https://latex.codecogs.com/svg.latex?%5Ctheta%28n%5Clg%7Bn%7D%29).
