@@ -8,4 +8,5 @@ by Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest and Clifford Stein
   ### [Problems](https://github.com/zhengnengchen/CLRS/blob/master/chapter1/problems.md)
  ## [2  Getting Started](https://github.com/zhengnengchen/CLRS/tree/master/chapter2)
   ### [2.1 Inserting sort](https://github.com/zhengnengchen/CLRS/blob/master/chapter2/exercises2-1.md)
-  ### [2.2 Designing algorithms](https://github.com/zhengnengchen/CLRS/blob/master/chapter2/exercises2-2.md)
+  ### [2.2 Analyzing algorithms](https://github.com/zhengnengchen/CLRS/blob/master/chapter2/exercises2-2.md)
+  ### [2.3 Designing algorithms](https://github.com/zhengnengchen/CLRS/blob/master/chapter2/exercises2-3.md)
