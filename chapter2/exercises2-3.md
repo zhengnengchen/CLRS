@@ -53,6 +53,10 @@ MERGE(A, p, q, r)
 25     k = k+1
 ```
  # 2.3-3
-> Use mathematics induction to show that when n is an exact power of 2, the solution of the recurrence
-> ![equation](https://latex.codecogs.com/svg.latex?T%28n%29%3D%5Cbegin%7Bcases%7D2%26%5Ctext%7Bif%20%7Dn%3D2%2C%5C%5C2T%28%5Cdfrac%7Bn%7D%7B2%7D%29&plus;n%26%5Ctext%7Bif%20%7Dn%3D2%5Ek%5Ctext%7B%2C%20for%20%7Dk%3E1%5Cend%7Bcases%7D)
+> Use mathematics induction to show that when n is an exact power of 2, the solution of the recurrence  
+> ![equation](https://latex.codecogs.com/svg.latex?T%28n%29%3D%5Cbegin%7Bcases%7D2%26%5Ctext%7Bif%20%7Dn%3D2%2C%5C%5C2T%28%5Cdfrac%7Bn%7D%7B2%7D%29&plus;n%26%5Ctext%7Bif%20%7Dn%3D2%5Ek%5Ctext%7B%2C%20for%20%7Dk%3E1%5Cend%7Bcases%7D)  
 > is ![equation](https://latex.codecogs.com/svg.latex?T%28n%29%3Dn%5Clg%7Bn%7D)
+
+Base case: When n=2, T(n) = T(2) = 2lg2 = 2*1 = 2
+
+Inducive step: For an arbitrary k, if T(k) = 2T(k/2)+k = k lgk, then T(k+1) = 2T((k+1)/2)+k+1 = 
