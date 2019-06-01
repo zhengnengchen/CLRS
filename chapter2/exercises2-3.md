@@ -57,6 +57,8 @@ MERGE(A, p, q, r)
 > ![equation](https://latex.codecogs.com/svg.latex?T%28n%29%3D%5Cbegin%7Bcases%7D2%26%5Ctext%7Bif%20%7Dn%3D2%2C%5C%5C2T%28%5Cdfrac%7Bn%7D%7B2%7D%29&plus;n%26%5Ctext%7Bif%20%7Dn%3D2%5Ek%5Ctext%7B%2C%20for%20%7Dk%3E1%5Cend%7Bcases%7D)  
 > is ![equation](https://latex.codecogs.com/svg.latex?T%28n%29%3Dn%5Clg%7Bn%7D)
 
-Base case: When n=2, T(n) = T(2) = 2lg2 = 2*1 = 2
+Base case: When k=1, ![equation](https://latex.codecogs.com/svg.latex?T%28n%29%3DT%282%5E1%29%3DT%282%29%3D2)
 
-Inducive step: For an arbitrary k, if T(k) = 2T(k/2)+k = k lgk, then T(k+1) = 2T((k+1)/2)+k+1 = 
+Inducive step: For an arbitrary k where ![equation](https://latex.codecogs.com/svg.latex?k%5Cgeq%201), let's assume that ![equation](https://latex.codecogs.com/svg.latex?T%28n%29%3DT%282%5Ek%29%3D2T%28%5Cdfrac%7Bn%7D%7B2%7D%29&plus;n%3Dn%5Clg%7Bn%7D) is true. Then we have  
+![equation](https://latex.codecogs.com/svg.latex?%5Cbegin%7Balign*%7DT%282%5E%7Bk&plus;1%7D%29%26%3DT%282n%29%5C%5C%26%3D2T%28%5Cdfrac%7B2n%7D%7B2%7D%29&plus;2n%5C%5C%26%3D2T%28n%29&plus;4n%5C%5C%26%3D2n%5Clg%7Bn%7D&plus;2n%5C%5C%26%3D2n%28lg%7Bn%7D&plus;1%29%5C%5C%26%3D2n%28%5Clg%7B2n%7D%29%5Cend%7Balign*%7D)  
+That is, if the result of ![equation](https://latex.codecogs.com/svg.latex?T%28n%29%3Dn%5Clg%7Bn%7D) holds for all ![equation](https://latex.codecogs.com/svg.latex?k%5Cgeq%201), then the same result holds for ![equation](https://latex.codecogs.com/svg.latex?k&plus;1)
