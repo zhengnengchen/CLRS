@@ -27,7 +27,7 @@ Given the result calculated in previous. We should choose k to be the nearest in
 > 4             exchange A[j] with A[j-1]
 > ```
 > a. Let A' denote the output of BUBBLESORT(A). To prove that BUBBLESORT is correct, we need to prove that it terminates and that  
-> ![equation](https://latex.codecogs.com/svg.latex?A%27%5B1%5D%5Cleq%20A%27%5B2%5D%5Cleq%5Ccdots%5Cleq%20A%27%5Bn%5D%5Cqquad%282.3%29)  
+> ![equation](https://latex.codecogs.com/svg.latex?%5Cinline%20A%27%5B1%5D%5Cleq%20A%27%5B2%5D%5Cleq%5Ccdots%5Cleq%20A%27%5Bn%5D%5Cqquad%282.3%29)  
 > where n = A.length. In order to show that BUBBLESORT actually sorts, what else do we need to prove?
 
 Besides the algorithm terminates and outputs a sorted array, we need to prove that each element in the output is in a distinct position in the original array. That is, the algorithm sort original array instead of something else.
@@ -56,7 +56,7 @@ Besides the algorithm terminates and outputs a sorted array, we need to prove th
 
 In the worst-case, the array A is in descending order. Then for each iteration of the **for** loop of lines 2-4, the **if** condition is to be determined and the exchange is to be performed. Suppose the swap operation can be performed in constant time, we have
 
-![equation](https://latex.codecogs.com/svg.latex?%5Cbegin%7Balign*%7DT%28n%29%26%3D%5Csum_%7Bi%3D1%7D%5En%5Csum_%7Bj%3Di&plus;1%7D%5Enc_1%5C%5C%26%3D%5Csum_%7Bi%3D1%7D%5En%28n-i%29c_1%5C%5C%26%3D%5Csum_%7Bi%3D1%7D%5En%28nc_1-ic_1%29%5C%5C%26%3D%5Csum_%7Bi%3D1%7D%5Ennc_1-%5Csum_%7Bi%3D1%7D%5Enic_1%5C%5C%26%3Dc_1n%5E2-%5Cdfrac%7B%28n&plus;1%29n%7D%7B2%7Dc_1%5C%5C%26%3D%5Cdfrac%7B1%7D%7B2%7Dc_1n%5E2-%5Cdfrac%7B1%7D%7B2%7Dc_1n%5C%5C%26%3D%5Ctheta%28n%5E2%29%5Cend%7Balign*%7D)
+![equation](https://latex.codecogs.com/svg.latex?%5Cbegin%7Balign*%7DT%28n%29%26%3D%5Csum_%7Bi%3D1%7D%5En%5Csum_%7Bj%3Di&plus;1%7D%5Enc_1%5C%5C%26%3D%5Csum_%7Bi%3D1%7D%5En%28n-i%29c_1%5C%5C%26%3D%5Csum_%7Bi%3D1%7D%5En%28nc_1-ic_1%29%5C%5C%26%3D%5Csum_%7Bi%3D1%7D%5Ennc_1-%5Csum_%7Bi%3D1%7D%5Enic_1%5C%5C%26%3Dc_1n%5E2-%5Cdfrac%7B%28n&plus;1%29n%7D%7B2%7Dc_1%5C%5C%26%3D%5Cdfrac%7B1%7D%7B2%7Dc_1n%5E2-%5Cdfrac%7B1%7D%7B2%7Dc_1n%5C%5C%26%3D%5CTheta%28n%5E2%29%5Cend%7Balign*%7D)
 
 # 2-3 Correctiness of Horner's rule
 > The following code fragment implements Horner's rule for evaluating a polynomial  
@@ -67,10 +67,10 @@ In the worst-case, the array A is in descending order. Then for each iteration o
 > 2  for i = n downto 0
 > 3      y = a_i+x*y
 > ```
-> a. In terms of ![equation](https://latex.codecogs.com/svg.latex?%5Cinline%20%5Ctheta)-notation, what is the running time of this code fragment for Horner's rule?
+> a. In terms of ![equation](https://latex.codecogs.com/svg.latex?%5Cinline%20%5CTheta)-notation, what is the running time of this code fragment for Horner's rule?
 
 Suppose the multiplication and summation operations in line 3 takes constant time to execute. We have the worst-case running time as  
-![equation](https://latex.codecogs.com/svg.latex?%5Cbegin%7Balign*%7DT%28n%29%26%3D%5Csum_%7Bi%3D0%7D%5En%28c_1&plus;c_2%29%5C%5C%26%3D%28c_1&plus;c_2%29n&plus;%28c_1&plus;c_2%29%5C%5C%26%3D%5Ctheta%28n%29%5Cend%7Balign*%7D)
+![equation](https://latex.codecogs.com/svg.latex?%5Cbegin%7Balign*%7DT%28n%29%26%3D%5Csum_%7Bi%3D0%7D%5En%28c_1&plus;c_2%29%5C%5C%26%3D%28c_1&plus;c_2%29n&plus;%28c_1&plus;c_2%29%5C%5C%26%3D%5CTheta%28n%29%5Cend%7Balign*%7D)
 
 > b. Write pseudocode to implement the naive polynomial-evaluation algorithm that computes each term of the polynomial from scratch. What is the running time of this algorithm? How does it compare to Hoener's rule?
 
@@ -87,9 +87,9 @@ NAIVE-POLYNOMIAL-EVALUATION(x, A)
 ```
 
 The running time of naive polynomial-evaluation algorithm is  
-![equation](https://latex.codecogs.com/svg.latex?%5Cbegin%7Balign*%7DT%28n%29%26%3D%5Csum_%7Bi%3D0%7D%5En%28%5Csum_%7Bj%3D1%7D%5Eic_1&plus;c_2%29%5C%5C%26%3D%5Csum_%7Bi%3D0%7D%5En%28c_1i&plus;c_2%29%5C%5C%26%3D%5Cdfrac%7B%28n&plus;1%29n%7D%7B2%7Dc_1&plus;%28n&plus;1%29c_2%5C%5C%26%3D%5Cdfrac%7B1%7D%7B2%7Dc_1n%5E2&plus;%28%5Cdfrac%7B1%7D%7B2%7Dc_1&plus;c_2%29n&plus;c_2%5C%5C%26%3D%5Ctheta%28n%5E2%29%5Cend%7Balign*%7D)
+![equation](https://latex.codecogs.com/svg.latex?%5Cbegin%7Balign*%7DT%28n%29%26%3D%5Csum_%7Bi%3D0%7D%5En%28%5Csum_%7Bj%3D1%7D%5Eic_1&plus;c_2%29%5C%5C%26%3D%5Csum_%7Bi%3D0%7D%5En%28c_1i&plus;c_2%29%5C%5C%26%3D%5Cdfrac%7B%28n&plus;1%29n%7D%7B2%7Dc_1&plus;%28n&plus;1%29c_2%5C%5C%26%3D%5Cdfrac%7B1%7D%7B2%7Dc_1n%5E2&plus;%28%5Cdfrac%7B1%7D%7B2%7Dc_1&plus;c_2%29n&plus;c_2%5C%5C%26%3D%5CTheta%28n%5E2%29%5Cend%7Balign*%7D)
 
-The naive polynomial-evaluation algorithm is in ![equation](https://latex.codecogs.com/svg.latex?%5Cinline%20%5Ctheta%28n%5E2%29) while Horner's rule can be run in linear time.
+The naive polynomial-evaluation algorithm is in ![equation](https://latex.codecogs.com/svg.latex?%5Cinline%20%5CTheta%28n%5E2%29) while Horner's rule can be run in linear time.
 
 > c. Consider the following loop invariant:
 >
