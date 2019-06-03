@@ -1,7 +1,7 @@
 # 2-1 Insertion sort on small arrays in merge sort
-> Although merge sort runs in ![equation](https://latex.codecogs.com/svg.latex?%5Ctheta%28n%5Clg%7Bn%7D%29) worst-case time and insertion sort runs in ![equation](https://latex.codecogs.com/svg.latex?%5Ctheta%28n%5E2%29) worst-case time, the constant factors in insertion sort can make it faster in practice for small problem sizes on many machines. Thus, it makes sense to **coarsen** the leaves of the recursion by using insertion sort within merge sort when subproblems become sufficiently small. Consider a modification to merge sort in which ![equation](https://latex.codecogs.com/svg.latex?%5Cdfrac%7Bn%7D%7Bk%7D) sublists of length k are sorted using insertion sort and then merged using the standard merging mechanism, where k is a value to be determined.
+> Although merge sort runs in ![equation](https://latex.codecogs.com/svg.latex?%5Cinline%20%5CTheta%28n%5Clg%7Bn%7D%29) worst-case time and insertion sort runs in ![equation](https://latex.codecogs.com/svg.latex?%5Cinline%20%5CTheta%28n%5E2%29) worst-case time, the constant factors in insertion sort can make it faster in practice for small problem sizes on many machines. Thus, it makes sense to **coarsen** the leaves of the recursion by using insertion sort within merge sort when subproblems become sufficiently small. Consider a modification to merge sort in which n/k sublists of length k are sorted using insertion sort and then merged using the standard merging mechanism, where k is a value to be determined.
 
-> a. Show that insertion sort can sort the ![equation](https://latex.codecogs.com/svg.latex?%5Cdfrac%7Bn%7D%7Bk%7D) sublists, each of length k, in ![equation](https://latex.codecogs.com/svg.latex?%5Ctheta%28nk%29) worst-case time.
+> a. Show that insertion sort can sort the n/k sublists, each of length k, in ![equation](https://latex.codecogs.com/svg.latex?%5Cinline%20%5CTheta%28nk%29) worst-case time.
 
 For each sublist in size of k, insertion sort can sort it in ![equation](https://latex.codecogs.com/svg.latex?%5Ctheta%28k%5E2%29) time and there are ![equation](https://latex.codecogs.com/svg.latex?%5Cdfrac%7Bn%7D%7Bk%7D) of such sublists. Hence, the total time to sort ![equation](https://latex.codecogs.com/svg.latex?%5Cdfrac%7Bn%7D%7Bk%7D) sublists in size of k is ![equation](https://latex.codecogs.com/svg.latex?%5Ctheta%28k%5E2%29%5Ccdot%5Cdfrac%7Bn%7D%7Bk%7D%3D%5Ctheta%28k%5E2%5Ccdot%5Cdfrac%7Bn%7D%7Bk%7D%29%3D%5Ctheta%28nk%29)
 
@@ -57,3 +57,42 @@ Besides the algorithm terminates and outputs a sorted array, we need to prove th
 In the worst-case, the array A is in descending order. Then for each iteration of the **for** loop of lines 2-4, the **if** condition is to be determined and the exchange is to be performed. Suppose the swap operation can be performed in constant time, we have
 
 ![equation](https://latex.codecogs.com/svg.latex?%5Cbegin%7Balign*%7DT%28n%29%26%3D%5Csum_%7Bi%3D1%7D%5En%5Csum_%7Bj%3Di&plus;1%7D%5Enc_1%5C%5C%26%3D%5Csum_%7Bi%3D1%7D%5En%28n-i%29c_1%5C%5C%26%3D%5Csum_%7Bi%3D1%7D%5En%28nc_1-ic_1%29%5C%5C%26%3D%5Csum_%7Bi%3D1%7D%5Ennc_1-%5Csum_%7Bi%3D1%7D%5Enic_1%5C%5C%26%3Dc_1n%5E2-%5Cdfrac%7B%28n&plus;1%29n%7D%7B2%7Dc_1%5C%5C%26%3D%5Cdfrac%7B1%7D%7B2%7Dc_1n%5E2-%5Cdfrac%7B1%7D%7B2%7Dc_1n%5C%5C%26%3D%5Ctheta%28n%5E2%29%5Cend%7Balign*%7D)
+
+# 2-3 Correctiness of Horner's rule
+> The following code fragment implements Horner's rule for evaluating a polynomial  
+> ![equation](https://latex.codecogs.com/svg.latex?%5Cbegin%7Balign*%7DP%28x%29%26%3D%5Csum_%7Bk%3D0%7D%5E%7Bn%7Da_kx%5Ek%5C%5C%26%3Da_0&plus;x%28a_1&plus;x%28a_2&plus;%5Ccdots&plus;x%28a_%7Bn-1%7D&plus;xa_n%29%5Ccdots%29%29%5Cend%7Balign*%7D),  
+> given the coefficients ![equation](https://latex.codecogs.com/svg.latex?a_0%2Ca_1%2C%5Ccdots%2Ca_n) and a value for x:
+> ```
+> 1  y = 0
+> 2  for i = n downto 0
+> 3      y = a_i+x*y
+> ```
+> a. In terms of ![equation](https://latex.codecogs.com/svg.latex?%5Cinline%20%5Ctheta)-notation, what is the running time of this code fragment for Horner's rule?
+
+Suppose the multiplication and summation operations in line 3 takes constant time to execute. We have the worst-case running time as  
+![equation](https://latex.codecogs.com/svg.latex?%5Cbegin%7Balign*%7DT%28n%29%26%3D%5Csum_%7Bi%3D0%7D%5En%28c_1&plus;c_2%29%5C%5C%26%3D%28c_1&plus;c_2%29n&plus;%28c_1&plus;c_2%29%5C%5C%26%3D%5Ctheta%28n%29%5Cend%7Balign*%7D)
+
+> b. Write pseudocode to implement the naive polynomial-evaluation algorithm that computes each term of the polynomial from scratch. What is the running time of this algorithm? How does it compare to Hoener's rule?
+
+```
+NAIVE-POLYNOMIAL-EVALUATION(x, A)
+1  y = 0
+2  // evaluate each term
+3  for i = A.length downto 0
+4      x_term = 1
+5      // evaluate x^k
+6      for j = 1 to i
+7          x_term = x_term*x
+8      y = y+A[i]*x_term
+```
+
+The running time of naive polynomial-evaluation algorithm is  
+![equation](https://latex.codecogs.com/svg.latex?%5Cbegin%7Balign*%7DT%28n%29%26%3D%5Csum_%7Bi%3D0%7D%5En%28%5Csum_%7Bj%3D1%7D%5Eic_1&plus;c_2%29%5C%5C%26%3D%5Csum_%7Bi%3D0%7D%5En%28c_1i&plus;c_2%29%5C%5C%26%3D%5Cdfrac%7B%28n&plus;1%29n%7D%7B2%7Dc_1&plus;%28n&plus;1%29c_2%5C%5C%26%3D%5Cdfrac%7B1%7D%7B2%7Dc_1n%5E2&plus;%28%5Cdfrac%7B1%7D%7B2%7Dc_1&plus;c_2%29n&plus;c_2%5C%5C%26%3D%5Ctheta%28n%5E2%29%5Cend%7Balign*%7D)
+
+The naive polynomial-evaluation algorithm is in ![equation](https://latex.codecogs.com/svg.latex?%5Cinline%20%5Ctheta%28n%5E2%29) while Horner's rule can be run in linear time.
+
+> c. Consider the following loop invariant:
+>
+> > At the start of each iteration of the **for** loop of lines 2-3, ![equation](https://latex.codecogs.com/svg.latex?y%3D%5Csum_%7Bk%3D0%7D%5E%7Bn-%28i&plus;1%29%7Da_%7Bk&plus;i&plus;1%7Dx%5Ek).
+>
+> Interpret a summation with no terms as equaling 0. Following the structure of the loop invariant proof presented in this chapter, use this loop invariant to show that, at termination, ![equation](https://latex.codecogs.com/svg.latex?%5Cinline%20y%3D%5Csum_%7Bk%3D0%7D%5Ena_kx%5Ek).
