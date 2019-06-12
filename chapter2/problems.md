@@ -96,3 +96,9 @@ The naive polynomial-evaluation algorithm is in ![equation](https://latex.codeco
 > > At the start of each iteration of the **for** loop of lines 2-3, ![equation](https://latex.codecogs.com/svg.latex?y%3D%5Csum_%7Bk%3D0%7D%5E%7Bn-%28i&plus;1%29%7Da_%7Bk&plus;i&plus;1%7Dx%5Ek).
 >
 > Interpret a summation with no terms as equaling 0. Following the structure of the loop invariant proof presented in this chapter, use this loop invariant to show that, at termination, ![equation](https://latex.codecogs.com/svg.latex?%5Cinline%20y%3D%5Csum_%7Bk%3D0%7D%5Ena_kx%5Ek).
+
+**Interpretation**: At the start of ith iteration of the **for** loop of lines 2-3, the subarray A\[i+1..n\] has been evaluated as a polynomial with the highest order of n-(i+1). That is, ![equation](https://latex.codecogs.com/svg.latex?%5Cinline%20y%3DA_%7Bi&plus;1%7D&plus;A_%7Bi&plus;2%7Dx&plus;A_%7Bi&plus;3%7Dx%5E2&plus;%5Ccdots&plus;A_%7Bn-1%7Dx%5E%7Bn-%28i&plus;1%29-1%7D&plus;A_nx%5E%7Bn-%28i&plus;1%29%7D).
+
+**Initialization**: Prior to the first iteration of the loop, we have i = n, so that the subarray A\[i+1..n\] is empty. Since the subarray is empty, the coefficients of all terms of polynomial are 0. Thus, y = 0.
+
+**Maintenance**: 
