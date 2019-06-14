@@ -103,6 +103,30 @@ The naive polynomial-evaluation algorithm is in ![equation](https://latex.codeco
 
 **Maintenance**: To see that each iteration maintains the loop invariant, let us first suppose that j = i-1. Then given that at the start of ith iteration of the **for** loop of lines 2-3, the subarray A\[i+1..n\] has been evaluated as a polynomial with degree of n-(i+1). After calculating ![equation](https://latex.codecogs.com/svg.latex?%5Cinline%20y%20%3D%20a_i&plus;xy) as in line 3, A\[i\] is evaluated into new polynomial and we have  
 ![equation](https://latex.codecogs.com/svg.latex?%5Cbegin%7Balign*%7Dy%26%3DA_i&plus;x%28A_%7Bi&plus;1%7D&plus;A_%7Bi&plus;2%7Dx&plus;%5Ccdots&plus;A_%7Bn-1%7Dx%5E%7Bn-%28i&plus;1%29-1%7D&plus;A_nx%5E%7Bn-%28i&plus;1%29%7D%29%5C%5C%26%3DA_i&plus;A_%7Bi&plus;1%7Dx&plus;A_%7Bi&plus;2%7Dx%5E2&plus;%5Ccdots&plus;A_%7Bn-1%7Dx%5E%7Bn-i-1%7D&plus;A_nx%5E%7Bn-i%7D%5C%5C%26%3D%5Csum_%7Bk%3D0%7D%5E%7Bn-i%7DA_%7Bk&plus;i%7Dx%5Ek%5Cend%7Balign*%7D)  
-This is the end of the ith iteration as well as the start of next iteration. That is, the subarray A\[i..n\] is evaluated as a polynomial with degree of n-i and in next iteration, A\[j\] which is also A\[i-1\] is going to be evaluated. We replace i in the equation from loop invariant with j to see if the equation still holds  
+This is the end of the ith iteration as well as the start of next iteration. That is, the subarray A\[i..n\] is evaluated as a polynomial with degree of n-i and in next iteration, A\[j\], which is also A\[i-1\], is going to be evaluated. We replace i in the equation from loop invariant with j to see if the equation still holds  
 ![equation](https://latex.codecogs.com/svg.latex?%5Cbegin%7Balign*%7Dj%26%3Di-1%5C%5Cy%26%3D%5Csum_%7Bk%3D0%7D%5E%7Bn-i%7Da_%7Bk&plus;i%7Dx%5Ek%5C%5C%26%3D%5Csum_%7Bk%3D0%7D%5E%7Bn-i&plus;1-1%7Da_%7Bk&plus;i-1&plus;1%7Dx%5Ek%5C%5C%26%3D%5Csum_%7Bk%3D0%7D%5E%7Bn-%28i-1%29-1%7Da_%7Bk&plus;j&plus;1%7Dx%5Ek%5C%5C%26%3D%5Csum_%7Bk%3D0%7D%5E%7Bn-j-1%7Da_%7Bk&plus;j&plus;1%7Dx%5Ek%5C%5C%26%3D%5Csum_%7Bk%3D0%7D%5E%7Bn-%28j&plus;1%29%7Da_%7Bk&plus;j&plus;1%7Dx%5Ek%5Cend%7Balign*%7D)  
 Observing the fact that the same results holds for j where j is decremented from i. We can tell that the loop invariant holds for next iteration.
+
+**Termination**: At termination, i = -1. By the loop invariant, the subarray A\[i+1..n\], which is A\[0..n\], has been evaluated as a polynomial with degree of n. The polynomial is  
+![equation](https://latex.codecogs.com/svg.latex?%5Cinline%20%5Cbegin%7Balign*%7Dy%26%3Da_0&plus;a_1x&plus;a_2x%5E2&plus;%5Ccdots&plus;a_%7Bn-1%7Dx%5E%7Bn-1%7D&plus;a_nx%5En%5C%5C%26%3D%5Csum_%7Bk%3D0%7D%5Ena_kx%5Ek%5Cend%7Balign*%7D)
+
+> d. Conclude by arguing that the given code fragment correctlyt evaluates a polynomial characterized by the coefficients ![equation](https://latex.codecogs.com/svg.latex?%5Cinline%20a_0%2Ca_1%2C%5Ccdots%2Ca_n).
+
+Since the loop invariant is proved that at termination, we have ![equation](https://latex.codecogs.com/svg.latex?%5Cinline%20y%3D%5Csum_%7Bk%3D0%7D%5Ena_kx%5Ek). We can rewrite the summation in the form of polynomial as we did in previous part. Thus, the polynomial is correctly evaluated by a set of coefficients ![equation](https://latex.codecogs.com/svg.latex?%5Cinline%20a_0%2Ca_1%2C%5Ccdots%2Ca_n).
+
+# 2-4 Inversions
+> Let A\[1..\] be an array of n distinct numbers. If i < j and A\[i\] > A\[j\], then the pair (i,j) is called an **inversion** of A.
+> a. List the five inversions of the array (2,3,8,6,1).
+
+(2,1), (3,1), (8,6), (8,1), (6,1)
+
+> b. What array with elements from the set {1,2,...,n} has the most inversions? How many does it have?
+
+A sorted array in descendent order with all elements from the set {1,2,...,n} has the most inversions. It has ![equation](https://latex.codecogs.com/svg.latex?%5Cinline%20%28n-1%29&plus;%28n-2%29&plus;%5Ccdots&plus;2&plus;1%3D%5Csum_%7Bi%3D1%7D%5E%7Bn-1%7Di%3D%5Cdfrac%7Bn%28n-1%29%7D%7B2%7D) pairs of inversions.
+
+> c. What is the relationship between the running time of insertion sort and number of inversions in the input array? Justify your answer.
+
+The running time of insertion sort and number of inversions in the input array are positively related. Because the number of inversions is number of swap performed in insertion sort.
+
+> d. Give an algorithm that determines the number of inversions in any permutation on n elements in ![equation](https://latex.codecogs.com/svg.latex?%5Cinline%20%5CTheta%28n%5Clg%7Bn%7D%29) worst-case time. (*Hint*: Modify merge sort.)
+
