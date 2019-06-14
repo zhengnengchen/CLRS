@@ -130,3 +130,30 @@ The running time of insertion sort and number of inversions in the input array a
 
 > d. Give an algorithm that determines the number of inversions in any permutation on n elements in ![equation](https://latex.codecogs.com/svg.latex?%5Cinline%20%5CTheta%28n%5Clg%7Bn%7D%29) worst-case time. (*Hint*: Modify merge sort.)
 
+First, we implement a **MERGE** procedure that works as **MERGE** procedure in merge sort. Our new **MERGE** procedure calculates the number of inversion among two subarray A\[p..q\] and A\[q+1..r\]:
+
+```
+MERGE(A, p, q, r)
+1  inv = 0
+2  i = p
+3  j = q+1
+4  for k = p to r
+5      if A[i] <= A[j]
+6          i = i+1
+7      else
+8         inv = inv+(q-i+1)
+9         j = j+1
+10 return inv
+```
+
+Then, we implement a **MERGE-INVERSION** that combine results from **INVERSION** procesure:
+
+```
+MERGE-INVERSION(A, p, q)
+1  if p < r
+2      q = floor((p+r)/2)
+3      left = MERGE-INVERSION(A, p, q)
+4      right = MERGE-INVERSION(A, q+1, r)
+5      current = MERGE(A, p, q, r)
+6      return left+right+current
+```
